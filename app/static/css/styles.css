@@ -8,7 +8,7 @@
 /* Body Styling */
 body {
     font-family: 'Roboto', Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f5f7fa; /* Light background for contrast */
     color: #333;
     line-height: 1.6;
     margin: 0;
@@ -17,13 +17,17 @@ body {
 
 /* Navbar Styling */
 .navbar {
-    background-color: #343a40; /* Dark gray */
+    background-color: #0f4a8a; /* Slightly darker blue for elegance */
     color: #fff;
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15); /* Softer shadow for depth */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-size: 16px;
 }
 
 .navbar a {
@@ -31,10 +35,11 @@ body {
     margin: 0 15px;
     text-decoration: none;
     font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 .navbar a:hover {
-    color: #007bff; /* Bright blue */
+    color: #00baff; /* Bright Cyan for hover effect */
 }
 
 /* Main Content */
@@ -43,32 +48,47 @@ body {
     max-width: 1200px;
     margin: 30px auto;
     background: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Clean shadow for emphasis */
+    border-radius: 12px; /* Softer corners for a modern feel */
 }
 
-/* Headings */
-h1, h2 {
-    color: #343a40;
+/* Page Title */
+.page-title {
+    font-size: 32px; /* Slightly larger for emphasis */
     font-weight: 700;
-    margin-bottom: 20px;
+    color: #0f4a8a;
+    text-align: center;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #e0e0e0; /* Subtle underline for separation */
+    padding-bottom: 10px;
 }
 
 /* Buttons */
-button {
-    background-color: #007bff; /* Bright blue */
+button, .btn {
+    background-color: #0f4a8a; /* Consistent blue color */
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 24px;
     font-size: 16px;
-    border-radius: 5px;
+    border-radius: 6px; /* Slightly rounded for better aesthetics */
     cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.2s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
 }
 
-button:hover {
-    background-color: #0056b3; /* Darker blue */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+button:hover, .btn:hover {
+    background-color: #093566; /* Darker blue for hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px); /* Subtle lift effect on hover */
+}
+
+.btn-edit {
+    background-color: #017bff; /* Lighter blue for differentiation */
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.btn-edit:hover {
+    background-color: #0056b3; /* Darker hover effect */
 }
 
 /* Forms */
@@ -82,50 +102,66 @@ input[type="password"],
 select,
 textarea {
     width: 100%;
-    padding: 12px;
-    margin: 10px 0;
+    padding: 14px;
+    margin: 12px 0;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 8px; /* Rounded edges for a modern touch */
     font-size: 16px;
     background-color: #f9f9f9;
     transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
 input:focus, textarea:focus {
-    border-color: #007bff;
-    background-color: #fff;
+    border-color: #0f4a8a;
+    background-color: #ffffff;
     outline: none;
+    box-shadow: 0 0 5px rgba(15, 74, 138, 0.2); /* Subtle glow on focus */
 }
 
 /* Table Styling */
-table {
+.table-container {
+    margin: 25px auto;
+    overflow-x: auto;
+}
+
+.styled-table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
+    margin: 0 auto;
     font-size: 16px;
+    background-color: #ffffff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* More pronounced shadow */
+    border-radius: 8px; /* Rounded table corners */
+    overflow: hidden;
 }
 
-table thead {
-    background-color: #007bff; /* Bright blue */
-    color: white;
-}
-
-table th, table td {
-    padding: 10px;
+.styled-table th, .styled-table td {
     text-align: left;
+    padding: 15px;
     border-bottom: 1px solid #ddd;
 }
 
-table tr:hover {
-    background-color: #f1f1f1;
+.styled-table th {
+    background-color: #0f4a8a;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.styled-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.styled-table tr:hover {
+    background-color: #e8f4ff; /* Light blue for hover */
 }
 
 /* Footer Styling */
 footer {
-    background-color: #343a40;
+    background-color: #0f4a8a;
     color: white;
     text-align: center;
-    padding: 15px 0;
+    padding: 20px 0;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -147,86 +183,26 @@ footer {
         margin: 20px;
         padding: 20px;
     }
-}
 
-/* Page Title */
-.page-title {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-/* Table Styling */
-.table-container {
-    margin: 20px auto;
-    overflow-x: auto;
-}
-
-.styled-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 0 auto;
-    font-size: 16px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.styled-table th, .styled-table td {
-    text-align: left;
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
-}
-
-.styled-table th {
-    background-color: #0047ab;
-    color: white;
-    font-weight: bold;
-}
-
-.styled-table tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-.styled-table tr:hover {
-    background-color: #f1f1f1;
-}
-
-/* Action Buttons */
-.btn {
-    display: inline-block;
-    text-align: center;
-    padding: 8px 16px;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 5px;
-    text-decoration: none;
-    color: white;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.btn-edit {
-    background-color: #007bff; /* Blue for Edit */
-    border: none;
-}
-
-.btn-edit:hover {
-    background-color: #0056b3;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
     .styled-table th, .styled-table td {
-        padding: 10px;
+        padding: 12px;
         font-size: 14px;
     }
 
-    .btn {
-        font-size: 12px;
-        padding: 6px 12px;
+    button, .btn {
+        font-size: 14px;
+        padding: 10px 16px;
     }
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.app-logo {
+    height: 50px; /* Adjust the size */
+    width: auto; /* Maintain aspect ratio */
+    display: block;
 }
