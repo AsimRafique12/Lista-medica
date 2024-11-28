@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<h1>Lista Medica Stroke Prediction App</h1>
+<p>Lista Medica Dashboard.</p>
+<form action="{{ url_for('main.goto_add_patient') }}" method="GET">
+    <button type="submit">Add Patient</button>
+</form>
+
+<form action="{{ url_for('main.gotoeditpatients') }}" method="GET">
+    <button type="submit">Edit Patient</button>
+</form>
+{% endblock %}
