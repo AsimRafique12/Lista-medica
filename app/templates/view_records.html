@@ -28,6 +28,9 @@
                 <td>{{ record.bmi }}</td>
                 <td>
                     <a href="/edit/{{ record.id }}" class="btn btn-edit">Edit</a>
+                    <form method="POST" action="/delete/{{ record.id }}" style="display:inline;">
+                        <button type="submit" class="btn btn-delete">Delete</button>
+                    </form>
                 </td>
             </tr>
             {% endfor %}

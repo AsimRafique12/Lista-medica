@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
+from flask_migrate import Migrate  # Import Flask-Migrate
 from app.models import db
 
 def create_app():
@@ -10,6 +11,9 @@ def create_app():
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
     db.init_app(app)
+
+    # Flask-Migrate setup
+    migrate = Migrate(app, db)  # Initialize Flask-Migrate with the app and db
 
     # Flask-Login setup
     login_manager = LoginManager()
